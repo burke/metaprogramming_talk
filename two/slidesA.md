@@ -56,35 +56,23 @@ Canadian -> Object
 # What is a class? #
 
 	@@@c
+	/* As of ruby-1.8.7 */
 	struct RBasic {
-	    VALUE flags;
+	    unsigned long flags;
 	    VALUE klass;
 	};
-	
-	typedef struct {
-	    VALUE super;
+	struct RObject {
+	    struct RBasic basic;
 	    struct st_table *iv_tbl;
-	} rb_classext_t;
-	
+	};
 	struct RClass {
 	    struct RBasic basic;
-	    rb_classext_t *ptr;
+	    struct st_table *iv_tbl;
 	    struct st_table *m_tbl;
-	    struct st_table *iv_index_tbl;
+	    VALUE super;
 	};
 
 !SLIDE
-
-# What is a class? #
-
-	@@@c
-	/* sort of like... */
-	struct RClass {
-	  VALUE superclass;
-	  struct st_table *instance_variables;
-	  struct st_table *methods;
-	  /* plus some other stuff */
-	};
 
 # What is a class? # 
 
