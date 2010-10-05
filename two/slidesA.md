@@ -72,8 +72,36 @@ Canadian -> Object
 	    VALUE super;
 	};
 
+!SLIDE bullets
+
+# Aren't Classes Objects? #
+
+* Short answer: **YES**.
+* Über-technically: **NO**.
+* As far as you can tell from ruby code: **YES**.
+
 !SLIDE
 
-# What is a class? # 
+# Aren't Classes Objects? #
 
-(diagram: a few classes with pointers to method tables)
+	@@@
+	~/src/ruby ▸ grep -ne '^struct R' ruby.h
+	318:struct RBasic {
+	323:struct RObject {
+	328:struct RClass {
+	341:struct RFloat {
+	349:struct RString {
+	362:struct RArray {
+	374:struct RRegexp {
+	383:struct RHash {
+	395:struct RFile {
+	400:struct RData {
+	430:struct RStruct {
+	438:struct RBignum {
+
+!SLIDE center
+
+# Diagrams! #
+
+![foo2.png](foo2.png)
+
