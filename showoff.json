@@ -1,0 +1,9 @@
+{
+  "name": "Metaprogramming Ruby",
+  "description": "Using and Abusing Ruby's Object Model",
+  "sections": [
+    {"section":"one"},
+    {"section":"two"},
+    {"section":"three"}
+  ]
+}
